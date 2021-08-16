@@ -18,8 +18,9 @@ public class TestsAll extends TestInit {
         checkUrl("https://jobs.dou.ua/salaries/");
         headerElements.getBtnWork().click();
         checkUrl("https://jobs.dou.ua/");
-        headerElements.getbtnCalendar().click();
+        headerElements.getBtnCalendar().click();
         checkUrl("https://dou.ua/calendar/");
+        headerElements.getBtnSearch().sendKeys("character\n");
 
     }
 

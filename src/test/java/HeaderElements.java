@@ -22,7 +22,13 @@ public class HeaderElements extends AbstractBaseElements {
     public WebElement getBtnWork() {
         return findElementByXpath("//a[contains(text(),'Работа')]");
     }
-    public WebElement getbtnCalendar() {
+    public WebElement getBtnCalendar() {
         return findElementByXpath("//a[contains(text(),'Календарь')]");
+    }
+    public WebElement getBtnSearch(){
+        return findElementByXpath("//input[@id='txtGlobalSearch']");
+    }
+    public WebElement getBtnSearchResult(){
+        return findElementByXpath("//a[contains(@class,'styleable-title ')]");
     }
 }
