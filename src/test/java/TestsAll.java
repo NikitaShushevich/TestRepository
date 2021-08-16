@@ -1,7 +1,11 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import javax.swing.*;
 
 public class TestsAll extends TestInit {
 
@@ -20,8 +24,16 @@ public class TestsAll extends TestInit {
         checkUrl("https://jobs.dou.ua/");
         headerElements.getBtnCalendar().click();
         checkUrl("https://dou.ua/calendar/");
-        headerElements.getBtnSearch().sendKeys("character\n");
 
+
+
+    }
+    @Test
+    public void testSearch(){
+        HeaderElements headerElements = new HeaderElements(driver);
+        driver.get("https://dou.ua");
+        headerElements.getBtnSearch().sendKeys("character");
+        enter();
     }
 
     private WebElement findElementByXpath(String locatorXpath) {
@@ -34,6 +46,12 @@ public class TestsAll extends TestInit {
 
     private void assertEquals(String actual, String expected) {
         Assert.assertEquals(actual, expected);
+    }
+
+    public void enter(){
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ENTER);
+
     }
 
 }
